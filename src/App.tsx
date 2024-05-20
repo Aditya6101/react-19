@@ -1,5 +1,6 @@
 import { useActionState } from "react";
 import './App.css'
+import Button from "./Button";
 
 function App() {
   const [data, submitAction, isPending] = useActionState(
@@ -18,14 +19,15 @@ function App() {
 
 
   function greetName(name: string): string {
-    return `Hi ${name}`
+    return `Hi ${name}!`
   }
 
 
   return (
     <form action={submitAction}>
       <input type="text" name='name' />
-      <button>{isPending ? "Loading..." : "Submit"}</button>
+      {/* <button>{isPending ? "Loading..." : "Submit"}</button> */}
+      <Button />
 
       <p>{data}</p>
     </form>
